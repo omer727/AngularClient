@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My AngularJS App</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<h2>Customers Card View With filter and pagination</h2>
+
+<div class="container-fluid">
+    <div class="row" style="background-color:lavenderblush;">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-5" style="background-color: black">.col-md-5</div>
+        <div class="col-md-3">.col-md-3</div>
+    </div>
+</div>
+
+
+
+<div ng-app="CrmApp">{{"Hello"+"World"}}
+        <!--<span ng-controller="CustomerController">-->
+
+    <div class="col-md-3" style="height:50px;">
+        <ul class="nav">
+            <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a href="#Customer-card">Card</a></li>
+            <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a href="#Customer-list">List</a></li>
+            <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a href="#Customer-add">Add Customer</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <!--#http://stackoverflow.com/questions/17928487/angular-js-how-to-change-an-elements-css-class-on-click-and-to-remove-all-others-->
+
+
+        <div class="container-fluid">
+            <div style="background-color:#047FF4;color:white;" class="row">
+                <img src="http://icons.iconarchive.com/icons/aha-soft/people/128/people-icon.png"
+                     style="height:40px;width:80px;" class="col-md-1"/>
+
+                <div class="col-md-11">
+                    <span style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:30px;">Customer Management</span>
+
+                    <div class="btn-group" style="vertical-align: text-bottom;height: 30px;" data-toggle="buttons">
+                        <!--<ul class="nav nav-tabs">-->
+                            <!--<li role="presentation" style="color:white" class="active"><a href="#">Home</a></li>-->
+                            <!--<li role="presentation" style="color:white"><a href="#">Profile</a></li>-->
+                            <!--<li role="presentation" style="color:white"><a href="#">Messages</a></li>-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div ng-view></div>
+
+        </div>
+
+
+   <!--</span>-->
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="customer.js"></script>
+</body>
+</html>

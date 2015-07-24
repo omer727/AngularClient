@@ -1,0 +1,15 @@
+<div style="float: right;font-weight: bold;">filter:<input type="input" ng-model="customerFilter"/></div>
+<div style="padding: 0;margin: 0;list-style:none;display:flex;justify-content: center;flex-wrap: wrap;">
+            <span ng-repeat="customer in customers | filter: customerFilter"
+                  style="border-style:solid;border-color: #E0E0E0;border-width:1px;width:300px;height: 100px;margin: 5px;">
+                <div style="height:30px;width:100%;background-color:#047FF4;color:white;font-size:18px;padding: 3px;">
+                    <div style="float:left;">{{customer.name}}</div>
+                    <img src="xbutton.png" style="float:right;margin:5px;" ng-click="deleteCustomer($index)"/></div>
+
+                <span>
+                    <img style="height: 70%;float:left;" ng-src="{{customer.sex}}Logo.png"/>
+                    <div style="float:left;">{{customer.character}}</div><br/>
+                    <div style="float:left;color:#8EB0E5;">{{customer.orders}} orders</div>
+                </span>
+            </span>
+</div>
