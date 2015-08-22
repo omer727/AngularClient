@@ -1,6 +1,6 @@
 <div style="float: right;font-weight: bold;">filter:<input type="input" ng-model="customerFilter"/></div>
 <div style="padding: 0;margin: 0;list-style:none;display:flex;justify-content: center;flex-wrap: wrap;">
-            <span ng-repeat="customer in customers | filter: customerFilter"
+            <span dir-paginate="customer in customers | filter: customerFilter | itemsPerPage:4"
                   style="border-style:solid;border-color: #E0E0E0;border-width:1px;width:100%;height: 100px;margin: 5px;">
                 <div style="height:30px;width:100%;background-color:#047FF4;color:white;font-size:18px;padding: 3px;">
                     <div style="float:left;">{{customer.name}}</div>
@@ -13,3 +13,5 @@
                 </span>
             </span>
 </div>
+
+<dir-pagination-controls boundary-links="true"/>

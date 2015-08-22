@@ -1,6 +1,6 @@
 (function (angular) {
     'use strict';
-    angular.module('CrmApp', ['ngRoute'])
+    angular.module('CrmApp', ['ngRoute', 'angularUtils.directives.dirPagination'])
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/Customer-card', {
@@ -16,17 +16,13 @@
                     controller: 'CustomerController'
                 })
                 .otherwise({
-                    redirectTo:'/Customer-card'
+                    redirectTo: '/Customer-card'
                 })
 
         })
-        .controller('CustomerController', ['$scope', function ($scope) {
+        .service('CustomerService', function () {
 
-            $scope.deleteCustomer = function (index) {
-                $scope.customers.splice(index, 1);
-            };
-
-            $scope.customers = [
+            this.customers = [
                 {
                     name: 'Robert Downey Jr.',
                     character: 'Tony Stark / Iron Man',
@@ -196,6 +192,27 @@
                     orders: 32
                 }
             ];
+        })
+        .controller('CustomerController', ['$scope', 'CustomerService', function ($scope, CustomerService) {
+
+            $scope.deleteCustomer = function (index) {
+                CustomerService.customers.splice(index, 1);
+            };
+
+            $scope.addCustomer = function () {
+                CustomerService.customers.push({
+                    firstName: $scope.customer.firstName,
+                    lastName: $scope.customer.lastName,
+                    email: $scope.customer.email
+                });
+                $scope.customer.firstName = '';
+                $scope.customer.lastName = '';
+                $scope.customer.email = '';
+
+            };
+            $scope.customer = {};
+
+            $scope.customers = CustomerService.customers;
 
         }]);
 
