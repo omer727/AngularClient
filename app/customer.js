@@ -1,22 +1,22 @@
 (function (angular) {
     'use strict';
-    angular.module('CrmApp', ['ngRoute', 'angularUtils.directives.dirPagination'])
+    angular.module('CrmApp', ['ngRoute', 'angularUtils.directives.dirPagination','ui.bootstrap'])
         .config(function ($routeProvider) {
             $routeProvider
-                .when('/Customer-card', {
+                .when('/customer/Customer-card', {
                     templateUrl: 'customer-card.html',
                     controller: 'CustomerController',
                 })
-                .when('/Customer-list', {
+                .when('/customer/Customer-list', {
                     templateUrl: 'customer-list.html',
                     controller: 'CustomerController'
                 })
-                .when('/Customer-add', {
+                .when('/customer/Customer-add', {
                     templateUrl: 'customer-add.html',
                     controller: 'CustomerController'
                 })
                 .otherwise({
-                    redirectTo: '/Customer-card'
+                    redirectTo: '/customer/Customer-card'
                 })
 
         })
