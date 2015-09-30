@@ -1,0 +1,47 @@
+<div>
+    <div>
+        <img src="resources/customerLogo.png" style="vertical-align: text-bottom"/><span style="font-size: 200%">Customers</span>
+    </div>
+    <div class="container-fluid">
+        <div>
+            <div class="col-xs-10">
+                <ul class="nav">
+                    <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a
+                            ng-click="changeToView('card')"
+                            style="color: black;font-weight: bolder;font-size: 24px"><span
+                            class="glyphicon glyphicon-th-large"></span><span>Card View</span></a></li>
+                    <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a
+                            ng-click="changeToView('list')"
+                            style="color: black;font-weight: bolder;font-size: 24px"><span
+                            class="glyphicon glyphicon-align-justify"></span><span>List View</span></a></li>
+                    <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a
+                            ng-click="changeToView('add')"
+                            style="color: black;font-weight: bolder;font-size: 24px"> <span
+                            class="glyphicon glyphicon-plus"></span><span>Add Customer</span></a></li>
+                </ul>
+            </div>
+            <div class="col-xs-2">
+                <div style="font-weight: bold;">filter:<input type="input" ng-model="customerFilter"/></div>
+            </div>
+        </div>
+
+        <br/>
+    </div>
+    <div>
+        <!--<div class="col-xs-1"></div>-->
+        <div style="width: 100%">
+
+            <!--<div ng-view></div>-->
+
+            <div ng-if="view=='card'" ng-include="'customer-card.html'"></div>
+            <div ng-if="view=='list'" ng-include="'customer-list.html'"></div>
+            <div ng-if="view=='add'" ng-include="'customer-add.html'"></div>
+
+
+        </div>
+        <!--<div class="col-xs-1"></div>-->
+    </div>
+
+
+    <!--</span>-->
+</div>

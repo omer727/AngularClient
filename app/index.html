@@ -3,6 +3,7 @@
 <head>
     <title>My AngularJS App</title>
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="order.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <style>
         @font-face {
@@ -10,16 +11,16 @@
             src: url(resources/Cambria_Bold_Italic.ttf);
         }
 
-
         .mybtn {
             color: black;
             text-align: center;
-            width:110px;
+            width: 110px;
             font-weight: bold;
             background-color: #047FF4;
             margin: 10px 5px 0px 5px;
         }
-        .mybtn:active,.mybtn:hover,.mybtn:focus{
+
+        .mybtn:active, .mybtn:hover, .mybtn:focus {
             background-color: white;
         }
 
@@ -32,20 +33,22 @@
 <div ng-app="CrmApp">
     <span ng-controller="TabsCtrl">
 
-        <div style="background-color:#047FF4;color:white;" class="row">
-            <img src="http://icons.iconarchive.com/icons/aha-soft/people/128/people-icon.png" style="height:50px;width:80px;" class="col-md-1"/>
-            <span style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:22px;margin-top:10px" class="col-md-2">Customer Management</span>
+        <div style="background-color:#047FF4;color:white;height:50px;" >
+            <img src="http://icons.iconarchive.com/icons/aha-soft/people/128/people-icon.png"
+                 style="height:50px;width:80px;" class="col-md-1"/>
+            <span style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:22px;margin-top:10px"
+                  class="col-md-2">Customer Management</span>
 
 
-                <!--<button type="button" class="btn mybtn">Customers</button>-->
-                <!--<button type="button" class="btn mybtn">Orders</button>-->
-                <!--<button type="button" class="btn mybtn">About</button>-->
-            <button type="button" class="btn mybtn" ng-repeat="button in buttons">{{button.title}}</button>
+            <!--<button type="button" class="btn mybtn">Customers</button>-->
+            <!--<button type="button" class="btn mybtn">Orders</button>-->
+            <!--<button type="button" class="btn mybtn">About</button>-->
+            <a type="button" class="btn mybtn" ng-repeat="button in buttons" href="{{button.url}}">{{button.title}}</a>
 
 
             <!--<tabset>-->
             <!--<ul class="nav nav-tabs">-->
-                <!--<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" class="mybtn"></tab>-->
+            <!--<tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" class="mybtn"></tab>-->
             <!--</ul>-->
             <!--</tabset>-->
             <!--<div class="btn-group" style="vertical-align: text-bottom;height: 30px;margin: 0px 20px 0px 20px;" data-toggle="buttons">-->
@@ -61,47 +64,9 @@
     </span>
     <br/>
 
-    <div>
-        <img src="resources/customerLogo.png" style="vertical-align: text-bottom"/><span style="font-size: 200%">Customers</span>
-    </div>
-    <div style="height:50px;">
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-10">
-                    <ul class="nav">
-                        <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a
-                                href="#/customer/Customer-card" style="color: black;font-weight: bolder;font-size: 24px"><span
-                                class="glyphicon glyphicon-th-large"></span><span>Card View</span></a></li>
-                        <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a
-                                href="#/customer/Customer-list" style="color: black;font-weight: bolder;font-size: 24px"><span
-                                class="glyphicon glyphicon-align-justify"></span><span>List View</span></a></li>
-                        <li style="float:none;display:inline-block;*display:inline;*zoom:1;vertical-align:top;"><a
-                                href="#/customer/Customer-add" style="color: black;font-weight: bolder;font-size: 24px"> <span
-                                class="glyphicon glyphicon-plus"></span><span>Add Customer</span></a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-2">
-                    <div style="font-weight: bold;">filter:<input type="input" ng-model="customerFilter"/></div>
-                </div>
-            </div>
 
 
-        </div>
-
-
-        <!--#http://stackoverflow.com/questions/17928487/angular-js-how-to-change-an-elements-css-class-on-click-and-to-remove-all-others-->
-
-
-        <div>
-
-            <div ng-view></div>
-
-        </div>
-
-        t
-        <!--</span>-->
-    </div>
+    <div ng-view></div>
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
@@ -110,5 +75,6 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="customer.js"></script>
     <script src="main.js"></script>
+
 </body>
 </html>

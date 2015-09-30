@@ -1,0 +1,46 @@
+<div>
+    <div class="glyphicon glyphicon-folder-open" style="font-size: 200%">
+        <!--<img src="resources/customerLogo.png" style="vertical-align: text-bottom"/><span style="font-size: 200%">Customers</span>-->
+        Orders
+    </div>
+
+    <div style="margin: 10px 10px">
+        <div style="font-weight: bold;">Filter by Name\Product: <input type="input" ng-model="orderFilter"/></div>
+    </div>
+
+    <div ng-controller="CustomerController" style="display: block;margin-left: auto;margin-right: auto;width:90%;">
+        <div dir-paginate="customer in customers | filter:orderFilter | itemsPerPage:5 ">
+            <div class="customer-row">{{customer.name}}</div>
+            <div class="order-table">
+                <div class="order-row">
+                    <div class="order-header-cell">Product</div>
+                    <div class="order-header-cell">Date</div>
+                    <div class="order-header-cell">Quantity</div>
+                    <div class="order-header-cell">Unit Price</div>
+                    <div class="order-header-cell">Total</div>
+                </div>
+                <div ng-repeat="order in customer.orders" class="order-row">
+                        <div class="order-cell">{{order.product}}</div>
+                        <div class="order-cell">{{order.date}}</div>
+                        <div class="order-cell">{{order.quantity}}</div>
+                        <div class="order-cell">{{order.price | currency}}</div>
+                        <div class="order-cell">{{order.price*order.quantity | currency}}</div>
+                </div>
+                <div class="order-row">
+                    <div class="order-cell"></div>
+                    <div class="order-cell"></div>
+                    <div class="order-cell"></div>
+                    <div class="order-cell"></div>
+                    <div class="order-cell order-total">{{ customer.orders | orderTotal | number:2 | currency }}</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <dir-pagination-controls/>
+    </div>
+
+
+</div>
+
