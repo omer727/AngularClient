@@ -6,24 +6,27 @@
 .order-table {
 
 
-    display:table;
+    /*display:table;*/
     border-collapse:collapse;
     color: grey;
+    width:100%;
+    position: relative;
 }
 
-.order-row {
-    display:table-row;
+
+.order-row:nth-child(odd) {background: #EEE}
+
+.order-total {
+    font-weight: bolder;
 }
 
 .order-cell{
-    display:table-cell;
     padding: 5px;
-    border: 1px solid #787878;
+    border: 1px solid #cacaca;
     margin:0px;
 }
 .order-header-cell{
-    display:table-cell;
-    width:25%;
+    width:20%;
     background-color: #047FF4;
     color: white;
     font-weight: bolder;
@@ -32,4 +35,8 @@
     border-color: white;
     border-width: 1px;
     border-style: solid;
+}
+
+
+.order-total {
 }

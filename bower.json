@@ -14,5 +14,6 @@
 	"bootstrap": "~3.3.6",
 	"angular-bootstrap":"~1.0.0",
 	"angular-utils-pagination": "0.3.1"
+
   }
 }
