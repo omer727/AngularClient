@@ -59,9 +59,9 @@
 
             $scope.customers = CustomerService.customers;
 
-        }]).directive('abc', function() {
-        return {template: '<table class="order-table">' +
-        '</table>'};
+        }])
+        .directive('abc', function() {
+        return {template: '<div>Hello World</div>'};
     });
 
 })(window.angular);

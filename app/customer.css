@@ -6,3 +6,22 @@
 .active-selection {
     background-color: #eee;
 }
+
+.customer-controller {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+controller-container {
+    margin: 10px 10px;
+}
+
+.filter-conainer-input {
+    font-weight: bold;
+}
+
+.glyphicon-container {
+    font-size: 200%;
+}

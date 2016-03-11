@@ -1,15 +1,14 @@
 <div>
-    <div class="glyphicon glyphicon-folder-open" style="font-size: 200%">
-        <!--<img src="resources/customerLogo.png" style="vertical-align: text-bottom"/><span style="font-size: 200%">Customers</span>-->
+    <div class="glyphicon glyphicon-folder-open glyphicon-container">
         Orders
     </div>
 
 
 
 
-    <div ng-controller="CustomerController" style="display: block;margin-left: auto;margin-right: auto;width:90%;">
-        <div style="margin: 10px 10px">
-            <div style="font-weight: bold;">Filter by Name\Product: <input type="input" ng-model="orderFilter"/></div>
+    <div ng-controller="CustomerController" class="customer-controller">
+        <div>
+            <div class="filter-conainer-input">Filter by Name\Product: <input type="input" ng-model="orderFilter"/></div>
         </div>
         <div dir-paginate="customer in customers | filter:orderFilter | itemsPerPage:5 ">
             <div class="customer-row">{{customer.name}}</div>
@@ -34,11 +33,9 @@
 
                     <td class="order-cell" colspan="4"></td>
                     <td class="order-cell order-total">{{ customer.orders | orderTotal | number:2 | currency }}</td>
-                    <!--<td class="order-cell order-total" style="width: 20%">{{ customer.orders | orderTotal | number:2 | currency }}</td>-->
                 </tr>
 
             </table>
-            <!--</div>-->
         </div>
 
 
