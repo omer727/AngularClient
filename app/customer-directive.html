@@ -1,0 +1,10 @@
+<div class="customer-card-container-header">
+    <div class="customer-card-container-header-div">{{customer.name}}</div>
+    <img src="xbutton.png" ng-click="deleteCustomer($index)" class="customer-card-container-header-img"/>
+</div>
+
+<span>
+    <img ng-src="resources/{{customer.sex}}Logo.png" class="customer-card-container-body-img"/>
+    <div class="customer-card-container-body-customer">{{customer.character}}</div><br/>
+    <div class="customer-card-container-body-o2rders">{{customer.orders.length}} orders</div>
+</span>

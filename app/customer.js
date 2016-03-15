@@ -60,8 +60,8 @@
             $scope.customers = CustomerService.customers;
 
         }])
-        .directive('abc', function() {
-        return {template: '<div>Hello World</div>'};
+        .directive('customer', function() {
+        return {templateUrl: 'customer-directive.html' };
     });
 
 })(window.angular);
