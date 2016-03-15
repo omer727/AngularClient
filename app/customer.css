@@ -3,6 +3,24 @@
     color: grey;
 }
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(resources/Cambria_Bold_Italic.ttf);
+}
+
+.mybtn {
+    color: black;
+    text-align: center;
+    width: 110px;
+    font-weight: bold;
+    background-color: #047FF4;
+    margin: 10px 5px 0px 5px;
+}
+
+.mybtn:active, .mybtn:hover, .mybtn:focus {
+    background-color: white;
+}
+
 .active-selection {
     background-color: #eee;
 }
@@ -72,4 +90,21 @@
 .customer-card-container-body-orders {
     float: left;
     color: #8EB0E5;
+}
+
+.tabs-ctrl-customer-management {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.tabs-ctrl-container {
+    background-color: #047FF4;
+    color: white;
+    height: 50px;
+}
+
+.tabs-ctrl-image {
+    height: 50px;
+    float: right;
 }
