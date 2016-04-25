@@ -1,7 +1,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('CrmApp', ['ngRoute', 'angularUtils.directives.dirPagination','ui.bootstrap'])
+    angular.module('CrmApp', ['ngRoute', 'angularUtils.directives.dirPagination'])
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/customers', {
