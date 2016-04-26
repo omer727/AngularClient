@@ -33,6 +33,9 @@
         .controller('CustomerController', ['$scope', 'CustomerService', function ($scope, CustomerService) {
 
             $scope.view = 'card';
+            $scope.customer = {};
+            $scope.customers = CustomerService.getCustomers();
+
 
             $scope.changeToView = function (view) {
                 if (view === 'card' || view === 'list' || view==='add'){
@@ -41,7 +44,7 @@
             };
 
             $scope.deleteCustomer = function (index) {
-                CustomerService.customers.splice(index, 1);
+                this.customers.splice(index, 1);
             };
 
             $scope.addCustomer = function () {
@@ -55,9 +58,6 @@
                 $scope.customer.email = '';
 
             };
-            $scope.customer = {};
-
-            $scope.customers = CustomerService.customers;
 
         }])
         .directive('customer', function() {
